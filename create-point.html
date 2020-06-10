@@ -43,6 +43,21 @@
               <input type="text" name="numero" id="numero" />
             </div>
           </div>
+          <div class="field-group">
+            <div class="field">
+              <label for="uf">Estado</label>
+              <input type="hidden" name="state" value="" />
+              <select name="uf" id="uf">
+                <option value="0">Selecione um Estado</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="city">Cidade</label>
+              <select name="city" id="city" disabled>
+                <option value="0">Selecione uma Cidade</option>
+              </select>
+            </div>
+          </div>
         </fieldset>
         <fieldset>
           <legend>
@@ -52,5 +67,7 @@
         <button type="submit ">Cadastrar ponto de coleta</button>
       </form>
     </div>
+
+    <script src="/scripts/create-point.js"></script>
   </body>
 </html>
