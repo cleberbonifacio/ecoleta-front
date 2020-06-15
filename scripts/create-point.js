@@ -22,6 +22,9 @@ function getCities(event) {
   const indexOfSelectedState = event.target.selectedIndex;
   stateInput.value = event.target.options[indexOfSelectedState].text;
 
+  citySelect.innerHTML = `<option value=>Selecione a Cidade</option>`;
+  citySelect.disabled = false;
+
   fetch(url)
     .then((res) => res.json())
     .then((cities) => {
