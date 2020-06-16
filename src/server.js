@@ -4,6 +4,8 @@ const server = express();
 //Configurar pasta publica
 server.use(express.static("public"));
 
+const nunjucks = require("nunjucks");
+
 server.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
