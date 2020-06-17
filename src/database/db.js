@@ -56,7 +56,7 @@ db.serialize(() => {
   //Deletar todos
   // db.run(`DELETE FROM places`);
   // Deletar com condição
-  // db.run(`DELETE FROM places WHERE id = ?`, [1], function (err) {
+  // db.run(`DELETE FROM places WHERE id = ?`, [5], function (err) {
   //   if (err) {
   //     return console.log(err);
   //   }
