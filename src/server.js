@@ -1,6 +1,8 @@
 const express = require("express");
 const server = express();
 
+const db = require("./database/db");
+
 //Configurar pasta publica
 server.use(express.static("public"));
 
@@ -19,7 +21,14 @@ server.get("/create-point", (req, res) => {
 });
 
 server.get("/search-results", (req, res) => {
-  return res.render("search-results.html");
+  db.all(`SELECT * FROM places`, function (err, rows) {
+    if (err) {
+      return console.log(err);
+    }
+    const total = rows.length;
+
+    return res.render("search-results.html", { places: rows, total });
+  });
 });
 
 server.listen(3000);
